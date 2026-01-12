@@ -117,6 +117,8 @@ Stop and remove the container
 docker stop hackernews-api
 docker rm hackernews-api
 
+---
+
 ### Option 3 – Using Docker Compose
 
 Docker Compose simplifies running the application by defining the container configuration in a single file.
