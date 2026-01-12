@@ -97,13 +97,13 @@ Build the Docker image
 
 From the project root directory:
 
-docker build -t hackernews-api .
+`docker build -t hackernews-api .`
 
 Run the container
-docker run -d \
+`docker run -d \
   --name hackernews-api \
   -p 8080:8080 \
-  hackernews-api
+  hackernews-api`
 
 The API will be available at:
 
@@ -114,8 +114,8 @@ Swagger UI:
 http://localhost:8080/swagger
 
 Stop and remove the container
-docker stop hackernews-api
-docker rm hackernews-api
+`docker stop hackernews-api`
+`docker rm hackernews-api`
 
 ---
 
@@ -123,22 +123,21 @@ docker rm hackernews-api
 
 Docker Compose simplifies running the application by defining the container configuration in a single file.
 
-Run with Docker Compose
+**Run with Docker Compose**
 
 From the project root directory:
 
-docker compose up --build
-
+`docker compose up --build`
 
 To run in detached mode:
 
-docker compose up -d --build
+`docker compose up -d --build`
 
 Access the application
 http://localhost:8080/swagger
 
 Stop the application
-docker compose down
+`docker compose down`
 
 ---
 
