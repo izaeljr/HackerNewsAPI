@@ -100,6 +100,7 @@ From the project root directory:
 `docker build -t hackernews-api .`
 
 Run the container
+
 `docker run -d \
   --name hackernews-api \
   -p 8080:8080 \
