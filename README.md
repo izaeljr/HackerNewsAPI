@@ -85,7 +85,62 @@ http://localhost:59406
 
 ---
 
-### Option 2 – Using Visual Studio
+### Option 2 - Using Docker
+
+This project includes a Dockerfile and can be run as a containerized application.
+
+Prerequisites
+
+Docker (native Linux, WSL, or Docker Desktop)
+
+Build the Docker image
+
+From the project root directory:
+
+docker build -t hackernews-api .
+
+Run the container
+docker run -d \
+  --name hackernews-api \
+  -p 8080:8080 \
+  hackernews-api
+
+The API will be available at:
+
+http://localhost:8080
+
+Swagger UI:
+
+http://localhost:8080/swagger
+
+Stop and remove the container
+docker stop hackernews-api
+docker rm hackernews-api
+
+### Option 3 – Using Docker Compose
+
+Docker Compose simplifies running the application by defining the container configuration in a single file.
+
+Run with Docker Compose
+
+From the project root directory:
+
+docker compose up --build
+
+
+To run in detached mode:
+
+docker compose up -d --build
+
+Access the application
+http://localhost:8080/swagger
+
+Stop the application
+docker compose down
+
+---
+
+### Option 4 – Using Visual Studio
 
 1. Open the `HackerNewsAPI.sln` file
 2. Select the **HTTPS** launch profile
