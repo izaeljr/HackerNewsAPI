@@ -89,17 +89,17 @@ http://localhost:59406
 
 This project includes a Dockerfile and can be run as a containerized application.
 
-Prerequisites
+**Prerequisites**
 
 Docker (native Linux, WSL, or Docker Desktop)
 
-Build the Docker image
+**Build the Docker image**
 
 From the project root directory:
 
 `docker build -t hackernews-api .`
 
-Run the container
+**Run the container**
 
 `docker run -d \
   --name hackernews-api \
