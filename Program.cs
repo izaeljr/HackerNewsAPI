@@ -28,9 +28,6 @@ app.UseHttpsRedirection();
 
 app.MapGet("/api/stories/best", async (int n, IHackerNewsClient client) =>
 {
-    if (n <= 0 || n > 100)
-        return Results.BadRequest("n must be between 1 and 100");
-
     var stories = await client.GetBestStoriesAsync(n);
     return Results.Ok(stories);
 });
