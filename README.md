@@ -114,6 +114,7 @@ Swagger UI:
 http://localhost:8080/swagger
 
 Stop and remove the container
+
 `docker stop hackernews-api`
 `docker rm hackernews-api`
 
@@ -137,6 +138,7 @@ Access the application
 http://localhost:8080/swagger
 
 Stop the application
+
 `docker compose down`
 
 ---
