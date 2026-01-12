@@ -26,6 +26,14 @@ namespace HackerNewsAPI.Services
                 GetFromJsonAsync<List<int>>($"{_options.BaseUrl}/beststories.json");
 
             var tasks = storyIds!.Take(n * 3).Select(GetStoryAsync);
+
+            var stories = (await Task.WhenAll(tasks))
+                .Where(x => x != null)
+                .OrderByDescending(x => x!.Score)
+                .Take(n)
+                .ToList();
+
+            return stories!;
         }
 
         private async Task<StoryResponse?> GetStoryAsync(int id)
@@ -34,7 +42,7 @@ namespace HackerNewsAPI.Services
             try
             {
                 var item = await _httpClient
-                    .GetFromJsonAsync<HackerNewsItem>($"{_options.BaseUrl}item{id}.json");
+                    .GetFromJsonAsync<HackerNewsItem>($"{_options.BaseUrl}/item/{id}.json");
 
                 if (item?.Title == null || item.Url == null)
                     return null;
