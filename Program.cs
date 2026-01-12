@@ -11,6 +11,8 @@ builder.Services
     .Validate(o => o.MaxConcurrency > 0, "MaxConcurrency must be greater than zero")
     .ValidateOnStart();
 
+builder.Services.AddMemoryCache();
+
 builder.Services.AddHttpClient<IHackerNewsClient, HackerNewsClient>();
 
 builder.Services.AddEndpointsApiExplorer();
