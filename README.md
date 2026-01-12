@@ -216,6 +216,7 @@ GET /beststories?n=5
 * Background refresh using `IHostedService`
 * Retry and circuit breaker policies (Polly)
 * Rate limiting per client/IP
+* Deploy in a cloud environment
 * Unit tests
 
 ---
